@@ -26,7 +26,6 @@ values for C factor based on B.Harmon (landcover_to_cfactor.txt)
 ## reclass for Mannings 
 values for Mannings values based on B.Harmon (landcover_to_mannings.txt)
 [Mannings reference table](http://www.spatialhydrology.net/index.php/JOSH/article/viewFile/84/83)
-[Mannings reference table](https://www.wcc.nrcs.usda.gov/ftpref/wntsc/H&H/HecRAS/NEDC/lectures/docs/Manning%92s%20n-values%20for%20Kansas%20Dam%20Breach%20Analyses%20-%20Adopted%20071216.pdf)
 ```
 31 = 0.0113
 52 = 0.4
@@ -43,7 +42,12 @@ values for Mannings values based on the paper [The role of mangroves in attenuat
 ```
 
 [Mannings reference table](https://www.wcc.nrcs.usda.gov/ftpref/wntsc/H&H/HecRAS/NEDC/lectures/docs/Manning%92s%20n-values%20for%20Kansas%20Dam%20Breach%20Analyses%20-%20Adopted%20071216.pdf)
-
+```
+31 = 0.025
+52 = 0.1
+71 = 0.035
+82 = 0.030
+```
 
 
 It should be noted that the Manning’s n values assigned to each LULC classification are not physically based (involving direct field measurements because 
