@@ -18,7 +18,7 @@ import csv
 import os
 
 # assign variables
-interval = 1 # minutes
+interval = 2 # minutes
 duration = 40 # minutes
 min_precip = 0 # mm
 max_precip = 30 # mm
