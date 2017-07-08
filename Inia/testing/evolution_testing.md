@@ -1,7 +1,5 @@
 
 # r.evolution testing
----------------------------
-
 
 **environment**
 * FATRA
@@ -12,9 +10,7 @@
 `g.region n=219657.343931 s=219320.143864 e=637072.65134968 w=636731.851429 res=0.3`
 
 ## Steady state (for lidar)
----------------------------
 mapset: `evol_lidar_steady_state`
-----------------------------
 ##### copy the elevtion raster from PERMANENT
 `g.copy raster=midpines_lidar_DEM_2015@PERMANENT,midpines_lidar_DEM_2015`
 
@@ -24,9 +20,7 @@ mapset: `evol_lidar_steady_state`
 `r.evolution --overwrite elevation=midpines_lidar_DEM_2015 runs=event mode=simwe_mode rain_intensity=30 rain_duration=40  walkers=5000000 mannings_value=0.15 start='2015-01-01 00:00:00' rain_interval=40 temporaltype=absolute threads=4 elevation_timeseries=elevation_timeseries`
 
 ## Dynamic state (for lidar)
-----------------------------
 mapset: `evol_lidar`
-----------------------------
 ###### copy the elevtion raster from PERMANENT
 `g.copy raster=midpines_lidar_DEM_2015@PERMANENT,midpines_lidar_DEM_2015`
 
@@ -37,3 +31,6 @@ mapset: `evol_lidar`
 * **rain_interval** set to 2 min based on [traveltime calculations](https://github.com/inioslawa/landscape_evolution/blob/master/Inia/testing/traveltime_lidar.md)
                                                                                         
 `r.evolution --overwrite elevation=midpines_lidar_DEM_2015 runs=event mode=simwe_mode rain_intensity=30 rain_duration=40 precipitation='/home/jajezior/evol_test/design_storm_2m.txt' walkers=5000000 mannings_value=0.15 start=2015-01-01 00:00:00 rain_interval=2 temporaltype=absolute threads=4 elevation_timeseries=elevation_timeseries`
+
+## RUSLE 
+`r.evolution elevation=midpines_lidar_DEM_2015 runs=series mode=rusle_mode rain_intensity=30 rain_duration=40 precipitation=/home/jajezior/evol_test/design_storm_2m.txt k_factor_value=0.21 c_factor=c_factor@PERMANENT walkers=5000000 runoff=runoff@PERMANENT mannings=mannings@PERMANENT start='2015-01-01 00:00:00' rain_interval=1 temporaltype=absolute threads=4 elevation_timeseries=elevation_timeseries`
