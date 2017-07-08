@@ -13,3 +13,4 @@ downhill segment of the modeling area (from the top down to the road) = **262 m*
 #### traveltime
 distance / mean velocity = **119 s** = **2 min**
 
+Based on that the simulation has been run for the time interval= 2 min
