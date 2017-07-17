@@ -3,6 +3,7 @@ parameters needed
 * mannings
 * runoff
 * c_factor (RUSLE)
+* k_factor (RUSLE)
 
 ## Base raster
 The landuse has beed digitazed based on the ortophoto (in the full vegatation season) `landuse@PERMANENT` location:`LW_landscape_evol`
@@ -61,3 +62,17 @@ values for runoff values based on B.Harmon (landcover_to_mannings.txt)
 71 = 0.35
 82 = 0.4
 ```
+## Soil map based on the National Cooperative Soil Survey
+digitized [from Web Soil Map](https://websoilsurvey.nrcs.usda.gov/app/WebSoilSurvey.aspx)
+* K_factor vaule source from [Soil Survey of City of Richmond, Virginia](https://www.nrcs.usda.gov/Internet/FSE_MANUSCRIPTS/virginia/VA760/0/Richmond_VA.pdf)
+| Map Unit Symbol                                                   | Map Unit Name | Acres in AOI | Percent of AOI |   |
+|-------------------------------------------------------------------|---------------|--------------|----------------|---|
+|                                                                   |               |              |                |   |
+|AgC |	Appling gravelly sandy loam, 6 to 10 percent slopes |	1.5 |	5.4%|
+|ApB |	Appling sandy loam, 2 to 6 percent slopes |	0.7 |	2.8%|
+|AsB2 |	Appling fine sandy loam, 2 to 6 percent slopes, moderately eroded |	20.2 |	74.7%|
+|CeB2 |	Cecil sandy loam, 2 to 6 percent slopes, moderately eroded |0.3 |	1.2%|
+|CeC2 |	Cecil sandy loam, 6 to 10 percent slopes, moderately eroded |	3.1 |	11.4%|
+|CnA |	Colfax sandy loam, 0 to 3 percent slopes |	1.2 |	4.5%|
+||Totals for Area of Interest |	27.1 |	100.0% |
+
