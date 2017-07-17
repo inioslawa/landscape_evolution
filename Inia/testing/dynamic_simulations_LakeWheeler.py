@@ -237,7 +237,7 @@ def render_2d(envs):
     render_multiplier = 1  # multiplier for rendering size
     whitespace = 1.5 # canvas width relative to map for legend
     fontsize = 36 * render_multiplier  # legend font size
-    legend_coord = (10, 50, 1, 4)  # legend display coordinates
+    legend_coord = (5, 45, 2, 5)  # legend display coordinates
     zscale = 1 # vertical exaggeration
 
     # create rendering directory
@@ -251,6 +251,42 @@ def render_2d(envs):
         gscript.read_command('g.mapset',
             mapset=mapset,
             location=location)
+
+        # set region
+        gscript.run_command('g.region', rast=region, res=res)
+
+        # set render size
+        info = gscript.parse_command('r.info',
+            map='elevation',
+            flags='g')
+        width = int(info.cols)*render_multiplier*whitespace
+        height = int(info.rows)*render_multiplier
+
+        def render_2d(envs):
+
+    brighten = 0  # percent brightness of shaded relief
+    render_multiplier = 1  # multiplier for rendering size
+    whitespace = 1.5 # canvas width relative to map for legend
+    fontsize = 36 * render_multiplier  # legend font size
+    legend_coord = (5, 45, 2, 5)  # legend display coordinates
+    zscale = 1 # vertical exaggeration
+
+    # create rendering directory
+    render = os.path.join(gisdbase, location, 'rendering')
+    if not os.path.exists(render):
+        os.makedirs(render)
+
+    for mapset in simulations:
+
+        # change mapset
+        gscript.read_command('g.mapset',
+            mapset=mapset,
+            location=location)
+
+        # set region
+        gscript.run_command('g.region', rast=region, res=res)
+
+        # set render size
         info = gscript.parse_command('r.info',
             map='elevation',
             flags='g')
@@ -280,6 +316,17 @@ def render_2d(envs):
             fontsize=fontsize,
             at=legend_coord)
         gscript.run_command('d.mon', stop=driver)
+           
+def cleanup():
+    try:
+        # stop cairo monitor
+        gscript.run_command('d.mon', stop=driver)
+    except CalledModuleError:
+        pass
+
+if __name__ == "__main__":
+    atexit.register(cleanup)
+    sys.exit(main())
 
 def cleanup():
     try:
