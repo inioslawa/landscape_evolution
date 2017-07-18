@@ -29,6 +29,7 @@ simulations = ['erdep','flux','transport','usped','rusle']
 
 # set parameters
 res = 0.3  # resolution of the region
+region = "midpines_lidar_DEM_2015@PERMANENT"
 nprocs = 5
 threads = 4
 
@@ -286,17 +287,6 @@ def render_2d(envs):
             at=legend_coord)
         gscript.run_command('d.mon', stop=driver)
            
-def cleanup():
-    try:
-        # stop cairo monitor
-        gscript.run_command('d.mon', stop=driver)
-    except CalledModuleError:
-        pass
-
-if __name__ == "__main__":
-    atexit.register(cleanup)
-    sys.exit(main())
-
 def cleanup():
     try:
         # stop cairo monitor
