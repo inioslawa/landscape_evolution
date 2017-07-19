@@ -4,15 +4,29 @@
 * the source of the [script](baharmon/landscape_evolution/testing/dynamic_simulations.py) for running the simulations
 # Workflow
 (to preserve naming consistency and clear database structure on *fatra*)
+
+### Local
+
+#### create a new folder for that simulation
+```
+cd /media/jajezior/540ECB340ECB0E44/Github/landscape_evolution/Inia/testing
+mkdir name_of_the_simulation
+```
+
+#### copy the generic script to the newly created folder
+`cp dynamic_simulations_LakeWheeler.py name_of_the_simulation/name_of_the_simulation.py`
+
+#### push the changes
+```
+cd /media/jajezior/540ECB340ECB0E44/Github/landscape_evolution
+git add --all
+git commit -am 'new simulation'
+git push
+```
 ### Githhub 
-#### copy the generic script
-https://github.com/inioslawa/landscape_evolution/Inia/testing/
- name_of_the_simulation.py
 #### modify the script
 use the script and modify the parameters according to the simulation
-#### create a new github directory for storing the results
-https://github.com/inioslawa/landscape_evolution/Inia/testing/
- name_of_the_simulation.py
+
  https://github.com/inioslawa/landscape_evolution/Inia/testing/ 
  name_of_the_simulation/name_of_the_simulation.py
 
@@ -27,9 +41,9 @@ git pull
 `grass-trunk`
 * location: LW_landscape_evol
 * mapset: PERMANENT
-####
-load the script from the location
-Github/landscape_evolution/Inia/testing/name_of_the_simulation.py
+
+#### load the script from the location
+Github/landscape_evolution/Inia/testing/name_of_the_simulation/name_of_the_simulation.py
 
 #### move the rendering results to the results folder
 `mv LW_landscape_evol/rendering/ Github/landscape_evolution/Inia/testing/name_of_the_simulation`
@@ -40,7 +54,7 @@ Github/landscape_evolution/Inia/testing/name_of_the_simulation.py
 * name_of_the_simulation_usped
 * name_of_the_simulation_rusle
 
-#### push the results into the Github
+#### push the results
 ```
 cd Github/landscape_evolution/
 git add --all
