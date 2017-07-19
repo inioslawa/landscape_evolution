@@ -36,6 +36,12 @@ git add --all
 git commit -am 'adding the simulation results'
 git push
 ```
+#### pull the changes into the local computer
+(terminal on the local computer)
+```
+cd /media/jajezior/540ECB340ECB0E44/Github/landscape_evolution
+git pull
+```
 
 
 
