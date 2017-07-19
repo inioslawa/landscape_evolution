@@ -51,7 +51,7 @@ def main():
     erdep_params['mode'] = 'simwe_mode'
     erdep_params['rain_intensity'] = 30.0
     erdep_params['rain_duration'] = 40
-    erdep_params['rain_interval'] = 2
+    erdep_params['rain_interval'] = 40
     erdep_params['start'] = "2016-01-01 00:00:00"
     erdep_params['walkers'] = 5000000
     erdep_params['grav_diffusion'] = 0.05
@@ -69,7 +69,7 @@ def main():
     flux_params['mode'] = 'simwe_mode'
     flux_params['rain_intensity'] = 30.0
     flux_params['rain_duration'] = 40
-    flux_params['rain_interval'] = 2
+    flux_params['rain_interval'] = 40
     flux_params['start'] = "2016-01-01 00:00:00"
     flux_params['walkers'] = 5000000
     flux_params['grav_diffusion'] = 0.05
@@ -89,7 +89,7 @@ def main():
     transport_params['mode'] = 'simwe_mode'
     transport_params['rain_intensity'] = 30
     transport_params['rain_duration'] = 40
-    transport_params['rain_interval'] = 2
+    transport_params['rain_interval'] = 40
     transport_params['start'] = "2016-01-01 00:00:00"
     transport_params['walkers'] = 5000000
     transport_params['grav_diffusion'] = 0.05
@@ -109,7 +109,7 @@ def main():
     usped_params['mode'] = 'usped_mode'
     usped_params['rain_intensity'] = 30
     usped_params['rain_duration'] = 40
-    usped_params['rain_interval'] = 2
+    usped_params['rain_interval'] = 40
     usped_params['start'] = "2016-01-01 00:00:00"
     usped_params['grav_diffusion'] = 0.05
     usped_params['m'] = 1.5
@@ -127,7 +127,7 @@ def main():
     rusle_params['mode'] = 'rusle_mode'
     rusle_params['rain_intensity'] = 30
     rusle_params['rain_duration'] = 40
-    rusle_params['rain_interval'] = 2
+    rusle_params['rain_interval'] = 40
     rusle_params['start'] = "2016-01-01 00:00:00"
     rusle_params['grav_diffusion'] = 0.05
     rusle_params['m'] = 0.4
