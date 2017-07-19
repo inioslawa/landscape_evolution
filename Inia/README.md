@@ -4,17 +4,25 @@
 * the source of the [script](baharmon/landscape_evolution/testing/dynamic_simulations.py) for running the simulations
 # Workflow
 (to preserve naming consistency and clear database structure on *fatra*)
-### copy the generic script
+`ssh jajezior@fatra.cnr.ncsu.edu -X`
+
+#### copy the generic script
 `cp Github/landscape_evolution/Inia/testing/dynamic_simulations_LakeWheeler.py Github/landscape_evolution/Inia/testing/name_of_the _simulation.py`
-### modify the script
+#### modify the script
 use the script and modify the parameters according to the simulation
-### create a new github directory for storing the results
+
+### Run the simulation
+`grass-trunk`
+* location:LW_landscape_evol
+* mapset: PERMANENT
+
+#### create a new github directory for storing the results
 `mkdir Github/landscape_evolution/Inia/testing/name_of_the_simulation`
-### move the modified for that simulation script to thet folder
+#### move the modified for that simulation script to thet folder
 `mv Github/landscape_evolution/Inia/testing/name_of_the_simulation.py Github/landscape_evolution/Inia/testing/name_of_the_simulation/name_of_the_simulation.py`
-### move the rendering results to that folder
+#### move the rendering results to that folder
 `mv LW_landscape_evol/rendering/ Github/landscape_evolution/Inia/testing/name_of_the_simulation`
-### rename the mapsets created in the location 
+#### rename the mapsets created in the location 
 * name_of_the_simulation_flux
 * name_of_the_simulation_erdep
 * name_of_the_simulation_usped
