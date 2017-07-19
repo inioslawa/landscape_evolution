@@ -29,6 +29,7 @@ simulations = ['erdep','flux','transport','usped','rusle']
 
 # set parameters
 res = 0.3  # resolution of the region
+region = "midpines_lidar_DEM_2015@PERMANENT"
 nprocs = 5
 threads = 4
 
@@ -169,7 +170,7 @@ def create_environments(simulations):
 
         # copy maps
         gscript.run_command('g.copy',
-            raster=['midpines_lidar_DEM_2015@PERMANENT@PERMANENT','elevation'],
+            raster=['midpines_lidar_DEM_2015@PERMANENT','elevation'],
             env=envs[mapset])
         gscript.run_command('g.copy',
             raster=['mannings@PERMANENT','mannings'],
@@ -208,7 +209,7 @@ def getEnvironment(gisdbase, location, mapset):
         f.write('GUI: text\n')
     env = os.environ.copy()
     env['GISRC'] = tmp_gisrc_file
-    env['GRASS_REGION'] = gscript.region_env(raster='midpines_lidar_DEM_2015@PERMANENT@PERMANENT')
+    env['GRASS_REGION'] = gscript.region_env(raster='midpines_lidar_DEM_2015@PERMANENT')
     env['GRASS_OVERWRITE'] = '1'
     env['GRASS_VERBOSE'] = '0'
     env['GRASS_MESSAGE_FORMAT'] = 'standard'
@@ -232,37 +233,6 @@ def dependencies():
         pass
 
 def render_2d(envs):
-
-    brighten = 0  # percent brightness of shaded relief
-    render_multiplier = 1  # multiplier for rendering size
-    whitespace = 1.5 # canvas width relative to map for legend
-    fontsize = 36 * render_multiplier  # legend font size
-    legend_coord = (5, 45, 2, 5)  # legend display coordinates
-    zscale = 1 # vertical exaggeration
-
-    # create rendering directory
-    render = os.path.join(gisdbase, location, 'rendering')
-    if not os.path.exists(render):
-        os.makedirs(render)
-
-    for mapset in simulations:
-
-        # change mapset
-        gscript.read_command('g.mapset',
-            mapset=mapset,
-            location=location)
-
-        # set region
-        gscript.run_command('g.region', rast=region, res=res)
-
-        # set render size
-        info = gscript.parse_command('r.info',
-            map='elevation',
-            flags='g')
-        width = int(info.cols)*render_multiplier*whitespace
-        height = int(info.rows)*render_multiplier
-
-        def render_2d(envs):
 
     brighten = 0  # percent brightness of shaded relief
     render_multiplier = 1  # multiplier for rendering size
@@ -317,17 +287,6 @@ def render_2d(envs):
             at=legend_coord)
         gscript.run_command('d.mon', stop=driver)
            
-def cleanup():
-    try:
-        # stop cairo monitor
-        gscript.run_command('d.mon', stop=driver)
-    except CalledModuleError:
-        pass
-
-if __name__ == "__main__":
-    atexit.register(cleanup)
-    sys.exit(main())
-
 def cleanup():
     try:
         # stop cairo monitor
