@@ -13,7 +13,7 @@ use the script and modify the parameters according to the simulation
 
 ### Run the simulation
 `grass-trunk`
-* location:LW_landscape_evol
+* location: LW_landscape_evol
 * mapset: PERMANENT
 
 #### create a new github directory for storing the results
@@ -22,10 +22,18 @@ use the script and modify the parameters according to the simulation
 `mv Github/landscape_evolution/Inia/testing/name_of_the_simulation.py Github/landscape_evolution/Inia/testing/name_of_the_simulation/name_of_the_simulation.py`
 #### move the rendering results to that folder
 `mv LW_landscape_evol/rendering/ Github/landscape_evolution/Inia/testing/name_of_the_simulation`
-#### rename the mapsets created in the location 
+#### rename the mapsets created in the location
+* location: LW_landscape_evol
 * name_of_the_simulation_flux
 * name_of_the_simulation_erdep
 * name_of_the_simulation_usped
 * name_of_the_simulation_rusle
+
+#### pusth the results into the Github
+`cd Github/landscape_evolution/`
+`git add --all`
+`git commit -am 'adding the simulation results'`
+`git push`
+
 
 
