@@ -19,6 +19,7 @@ mkdir name_of_the_simulation
 #### push the changes
 ```
 cd /media/jajezior/540ECB340ECB0E44/Github/landscape_evolution
+git pull
 git add --all
 git commit -am 'new simulation'
 git push
@@ -57,6 +58,7 @@ Github/landscape_evolution/Inia/testing/name_of_the_simulation/name_of_the_simul
 #### push the results
 ```
 cd Github/landscape_evolution/
+git pull
 git add --all
 git commit -am 'adding the simulation results'
 git push
