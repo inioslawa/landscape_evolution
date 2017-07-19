@@ -29,11 +29,13 @@ use the script and modify the parameters according to the simulation
 * name_of_the_simulation_usped
 * name_of_the_simulation_rusle
 
-#### pusth the results into the Github
-`cd Github/landscape_evolution/`
-`git add --all`
-`git commit -am 'adding the simulation results'`
-`git push`
+#### push the results into the Github
+```
+cd Github/landscape_evolution/
+git add --all
+git commit -am 'adding the simulation results'
+git push
+```
 
 
 
