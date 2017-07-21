@@ -28,7 +28,7 @@ git push
 #### modify the script
 use the script and modify the parameters according to the simulation
 
- https://github.com/inioslawa/landscape_evolution/Inia/testing/ 
+ github.com/inioslawa/landscape_evolution/Inia/testing
  name_of_the_simulation/name_of_the_simulation.py
 
 ### Run the simulation
@@ -42,6 +42,8 @@ git pull
 `grass-trunk`
 * location: LW_landscape_evol
 * mapset: PERMANENT
+#### set the working directory
+`cd "/home/jajezior/Github/landscape_evolution/Inia/testing/lidar_steady_constants"`
 
 #### load the script from the location
 Github/landscape_evolution/Inia/testing/name_of_the_simulation/name_of_the_simulation.py
