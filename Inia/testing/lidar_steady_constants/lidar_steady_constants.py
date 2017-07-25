@@ -55,8 +55,8 @@ def main():
     erdep_params['start'] = "2016-01-01 00:00:00"
     erdep_params['walkers'] = 5000000
     erdep_params['grav_diffusion'] = 0.05
-    erdep_params['mannings'] = 0.15
-    erdep_params['runoff'] = 0.35
+    erdep_params['mannings'] = 'mannings_const'
+    erdep_params['runoff'] = 'runoff_const'
     erdep_params['threads'] = threads
     erdep_params['env'] = envs['erdep']
     # append dictionary to options list
@@ -75,8 +75,8 @@ def main():
     flux_params['grav_diffusion'] = 0.05
     flux_params['transport_value'] = 0.01
     flux_params['detachment_value'] = 0.0001
-    flux_params['mannings'] = 0.15
-    flux_params['runoff'] = 0.35
+    flux_params['mannings'] = 'mannings_const'
+    flux_params['runoff'] = 'runoff_const'
     flux_params['threads'] = threads
     flux_params['env'] = envs['flux']
     # append dictionary to options list
@@ -95,8 +95,8 @@ def main():
     transport_params['grav_diffusion'] = 0.05
     transport_params['transport_value'] = 0.0001
     transport_params['detachment_value'] = 0.01
-    transport_params['mannings'] = 0.15
-    transport_params['runoff'] = 0.35
+    transport_params['mannings'] = 'mannings_const'
+    transport_params['runoff'] = 'runoff_const'
     transport_params['threads'] = threads
     transport_params['env'] = envs['transport']
     # append dictionary to options list
